@@ -147,7 +147,7 @@ if __name__ == "__main__":
 
 
 '''
-You have moved from "Coding" to "Product."
+THIS PROJECT has moved from "Coding" to "Product."
 
 Ingestion:  (YouTube -> Azure)
 
@@ -157,6 +157,5 @@ Retrieval:  (Found the rules about "Claims")
 
 Reasoning:  (Applied rules to the specific claims in the video)
 
-You are done. Your pipeline is fully operational.
+This pipeline is fully operational.
 '''
-  DDMMD,.WEFMEWEVM,E FV,FJKRE GERR RFKJ MDNDKV LJDSND   KVFN 

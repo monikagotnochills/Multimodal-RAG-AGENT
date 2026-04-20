@@ -1,6 +1,6 @@
 import operator
 from typing import Annotated, Dict, List, Optional, Any, TypedDict
-from xxlimited import Str
+
 
 # DEFINE THE SCHEMA FOR A SIMPLE COMPLIANCE RESULT
 
@@ -15,7 +15,7 @@ class ComplianceIssue(TypedDict):
 
 # define the global graph state
 # THIS DEFINES THE STATE THAT GETS PASSED AROUND IN THE AGENTIC WORKFLOW
-class Videoauditstate(typedDict):
+class VideoAuditState(TypedDict):
     '''
     Defines the data schema for langgraph execution content 
     main conTainer : HOLDS ALL THE INFO ABOUT THE AUDITS RIGHT FROM INITIAL URL TO THE FINAL REPORTS 
@@ -28,7 +28,7 @@ class Videoauditstate(typedDict):
 
     # ingestion and extractiom data
     local_fiel_path: Optional[str]
-    Video_metadata: Dict[Str, Any]
+    Video_metadata: Dict[str, Any]
     transcript: Optional[str]  # fully extracted speed to text
     ocr_text: List[str]
 

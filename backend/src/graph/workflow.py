@@ -1,39 +1,42 @@
 ''' 
-This module which we are building the workflow model defines the DAG  it is directed acyclic graph it orchestrates thwe video compliannce audit video process
-it conncts nodes to state graph from langgraph
+This module defines the DAG (Directed Acyclic Graph) for the video compliance audit process.
+It connects nodes to the StateGraph from langgraph.
 
 Start -> index_video_node -> audit_content_node -> END
-
-
-
 '''
-from langgraph.graph import END, StateGraph
+# FIX 1: Added START to the imports
+from langgraph.graph import END, StateGraph, START 
 from backend.src.graph.state import VideoAuditState
 from backend.src.graph.nodes import (
     index_video_node,
     audit_content_node
 )
 
-
 def create_graph():
     '''
-    Constructs and compile the Langgraph workflow
-    Return :
-    Compiled Graph: runnnable graph objevct for execution 
-     '''
-    # initialize the graph with state schema
+    Constructs and compiles the Langgraph workflow.
+    Returns:
+        Compiled Graph: runnable graph object for execution 
+    '''
+    # Initialize the graph with state schema
     workflow = StateGraph(VideoAuditState)
-    # add the nodes
+    
+    # Add the nodes
     workflow.add_node("indexer", index_video_node)
     workflow.add_node("auditor", audit_content_node)
-    # define the edges
+    
+    # Define the edges
+    # FIX 2: Added the entry point so the graph knows where to begin
+    workflow.add_edge(START, "indexer") 
+    
     workflow.add_edge("indexer", "auditor")
-    # once the auditor does his job the whole workflow ends
+    
+    # Once the auditor does its job, the whole workflow ends
     workflow.add_edge("auditor", END)
+    
     # COMPILE THE GRAPH
     app = workflow.compile()
     return app
 
-
-# expose this runnable app
+# Expose this runnable app
 app = create_graph()
