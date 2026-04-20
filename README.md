@@ -18,6 +18,8 @@ Key Features
 * **Multimodal Retrieval:** Processes both transcripts and visual text (OCR) via Video Indexer.
 * **Production-Grade Telemetry:** Full-stack monitoring with Application Insights.
 * **Stateful Reasoning:** Complex, multi-step validation logic orchestrated via LangGraph.
+* <img width="740" height="670" alt="image" src="https://github.com/user-attachments/assets/104eacbe-e523-4a8f-be9b-178248831ca4" />
+
 
 Prerequisites
 * Python 3.10+
