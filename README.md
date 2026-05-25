@@ -3,6 +3,8 @@
 
  Project Overview
 The Multimodal Compliance RAG Agent is an automated Video Compliance QA Pipeline. It leverages a Retrieval-Augmented Generation (RAG) architecture to audit video content against complex regulatory standards. By combining LLM-based reasoning with enterprise-grade cloud telemetry, this system transforms unstructured video data into structured, actionable compliance reports.
+<img width="1594" height="969" alt="image" src="https://github.com/user-attachments/assets/d739c6c4-329b-452f-90fe-0d65e1278cdc" />
+
 
 Architecture & Tech Stack
 * **Orchestration:** LangGraph (Stateful multi-agent workflows)
